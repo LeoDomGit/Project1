@@ -17,8 +17,8 @@ $(document).ready(function () {
                 confirmButtonText: 'Thêm',
                 focusConfirm: false,
                 preConfirm: () => {
-                  var chudename = Swal.getPopup().querySelector('#RoleName').value.trim();
-                  if(chudename==''){
+                  var RoleName = Swal.getPopup().querySelector('#RoleName').value.trim();
+                  if(RoleName==''){
                     const Toast = Swal.mixin({
                       toast: true,
                       position: 'top-end',
@@ -40,7 +40,7 @@ $(document).ready(function () {
                         url: '/addNewHoiDoan',
                         type: "POST",
                         data: {
-                          hoidoanname: hoidoanname,
+                            RoleName: RoleName,
                         },
                         success: function (response) {
                             if(response.check==1){
